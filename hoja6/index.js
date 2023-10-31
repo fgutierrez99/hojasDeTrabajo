@@ -5,7 +5,7 @@ const app = express();
 const PORT = 80;
 
 // Conectar a la base de datos
-mongoose.connect('mongodb+srv://userUMG:123@cluster0.ifyymt4.mongodb.net/CargaDatosHT5', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://userUMG:123@cluster0.ifyymt4.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Definir el esquema del modelo
 const dataSchema = new mongoose.Schema({
