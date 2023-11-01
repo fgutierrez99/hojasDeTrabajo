@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 80;
 const SECRET_KEY = '123'; // Reemplaza con una clave segura en un entorno de producción
 
 // Conexión a MongoDB
-mongoose.connect('mongodb+srv://userUMG:UMG2023@cluster0.ifyymt4.mongodb.net/hoja7', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://userUMG:123@cluster0.ifyymt4.mongodb.net/hoja7', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'Error de conexión a MongoDB:'));

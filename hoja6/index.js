@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-const PORT = 80;
+const PORT = 8081;
 
 // Conectar a la base de datos
-mongoose.connect('mongodb+srv://userUMG:123@cluster0.ifyymt4.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://userUMG:123@cluster0.ifyymt4.mongodb.net/CargaDatosHT5', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Definir el esquema del modelo
 const dataSchema = new mongoose.Schema({
@@ -29,8 +29,6 @@ const DataModel = mongoose.model('Data', dataSchema);
 
 app.use(express.json());
 
-// Rutas CRUD
-
 // Crear un nuevo registro
 app.post('/api/data', async (req, res) => {
   try {
@@ -53,7 +51,7 @@ app.get('/api/data', async (req, res) => {
 });
 
 // Obtener un registro por ID
-app.get('/api/data/:id', async (req, res) => {
+app.get('/api/data/:_id', async (req, res) => {
   try {
     const data = await DataModel.findById(req.params.id);
     res.json(data);
